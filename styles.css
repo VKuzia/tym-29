@@ -69,7 +69,7 @@ body {
 .main {
   margin: auto;
   margin-top: 50px;
-  width: 80%;
+  width: 85%;
   padding: 10px;
 }
 
@@ -90,4 +90,13 @@ animation: fader 10s;
   25% {opacity: 1;}
   75% {opacity: 1;}
   100% {opacity: 0;}
+}
+
+.centered_image {
+  display: block;
+  float: left;
+  margin: 30px;
+  margin-top: 0px;
+  min-width: 400px;
+  width: 41%;
 }
