@@ -7,6 +7,7 @@ document.write(`
          <button class="dropbtn">Подготовка</button>
          <div class="dropdown-content">
             <div>
+               <a href="preparation/teamleads.html">Руководители</a>
                <a href="preparation/written_materials.html">Оформление материалов</a>
                <a href="preparation/quiz.html">Нулевой тур</a>
                <a href="preparation/before_round.html">Перед боем</a>
