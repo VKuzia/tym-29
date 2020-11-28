@@ -66,6 +66,10 @@ body {
   display: block;
 }
 
+.dropdown:hover .drop {
+  display: block;
+}
+
 .main {
   margin: auto;
   margin-top: 50px;
