@@ -11,15 +11,6 @@ body {
   z-index: 1000;
 }
 
-.navbar a {
-  float: left;
-  font-size: 16px;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
 .dropdown {
   float: left;
   overflow: hidden;
@@ -34,10 +25,27 @@ body {
   background-color: inherit;
   font-family: inherit;
   margin: 0;
+  transition: background-color 0.25s ease-in-out;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;      
+  color: white;
+  transition: background-color 0.25s ease-in-out;
+}
+
+.navbar a:hover {
+  background-color: red;
+  cursor: pointer;
 }
 
 .navbar a:hover, .dropdown:hover .dropbtn {
   background-color: red;
+  cursor: pointer;
 }
 
 .dropdown-content {
@@ -60,6 +68,7 @@ body {
 
 .dropdown-content a:hover {
   background-color: #ddd;
+  cursor: pointer;
 }
 
 .dropdown:hover .dropdown-content {
@@ -68,7 +77,7 @@ body {
   animation-name: fadeInFrames;
   animation-iteration-count: 1;
   animation-timing-function: ease-in;
-  animation-duration: 0.3s;
+  animation-duration: 0.25s;
 }
 
 .dropdown:hover .drop {
@@ -107,7 +116,7 @@ animation: fader 10s;
   margin: 30px;
   margin-top: 0px;
   min-width: 400px;
-  width: 41%;
+  width: 43%;
 }
 
 .right_image {
@@ -116,7 +125,7 @@ animation: fader 10s;
   margin: 30px;
   margin-top: 0px;
   min-width: 400px;
-  width: 41%;
+  width: 43%;
 }
 
 @keyframes fadeInFrames {
