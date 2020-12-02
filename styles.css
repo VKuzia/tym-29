@@ -89,6 +89,10 @@ body {
   margin-top: 50px;
   width: 85%;
   padding: 10px;
+  animation-name: fadeInFrames;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 0.5s;
 }
 
 .center {
