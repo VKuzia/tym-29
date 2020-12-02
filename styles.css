@@ -64,6 +64,11 @@ body {
 
 .dropdown:hover .dropdown-content {
   display: block;
+  opacity: 1;
+  animation-name: fadeInFrames;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 0.3s;
 }
 
 .dropdown:hover .drop {
@@ -96,11 +101,29 @@ animation: fader 10s;
   100% {opacity: 0;}
 }
 
-.centered_image {
+.left_image {
   display: block;
   float: left;
   margin: 30px;
   margin-top: 0px;
   min-width: 400px;
   width: 41%;
+}
+
+.right_image {
+  display: block;
+  float: right;
+  margin: 30px;
+  margin-top: 0px;
+  min-width: 400px;
+  width: 41%;
+}
+
+@keyframes fadeInFrames {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
