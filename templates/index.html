@@ -1,27 +1,20 @@
-<!DOCTYPE html>
-<html lang="rus">
-<head>
-<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8"/>
-<link rel="stylesheet" href="styles.css">
+{% extends "base.html" %}
+{% load static %}
 
-<title>Главная · Турниры 29</title>
-</head>
-<body>
+{% block head_title %}
+Главная
+{% endblock %}
 
-  <div>
-    <script src="add_nav.js" charset="utf-8"></script>
-  </div>
 
-  <div class="main">
-    <div class="center">
+{% block content %}
+<div class="center">
       <h1>Гайды по Турнирам Юных Математиков</h1>
       <h2>подготовленные руководителями команд ГУО "Гимназия №29 г. Минска"</h2>
       <hr>
-      <div id="slideshow-container"></div>
-        <script type="text/javascript">
-          const links = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg'];
-          const path = 'assets/images/slideshow/'
+    <div id="slideshow-container"></div>
+    <script type="text/javascript">
+          const path = '{% static 'assets/images/slideshow/' %}';
+          const links = {{ slideshow_images|safe }};
           for (link of links) {
             document.getElementById('slideshow-container').innerHTML += `<div class="slide">
             <img src=${path}${link} alt="image" width=60%/>
@@ -29,7 +22,7 @@
             </div>`;
           }
         </script>
-        <script>
+    <script>
           var myIndex = 0;
           carousel();
           function carousel() {
@@ -39,10 +32,10 @@
               x[i].style.display = "none";
             }
             myIndex++;
-            if (myIndex > x.length) {myIndex = 1}    
+            if (myIndex > x.length) {myIndex = 1}
             x[myIndex-1].style.display = "block";
-            setTimeout(carousel, 10000);    
-            
+            setTimeout(carousel, 10000);
+
           }
         </script>
       <hr>
@@ -52,7 +45,7 @@
     <p>Тут собраны рекомендации для участников и руководителей турнира, которые мы можем скромно вам предложить, основываясь на своём опыте.
     Естественно, советы, которые мы здесь оставим, не являются обязательными и не претендуют на абсолютную правильность излагаемых идей,
     но в своё время помогали участникам команд Гимназии №29 добиваться высоких результатов в ходе турниров. </p>
-    
+
     <p>Тут можно будет почитать о том, что такое турниры юных математиков, в чём их отличие от олимпиад,
     как к ним готовиться, как оформлять материалы, как вести себя в ходе боя и о паре других полезных штук.
 
@@ -67,7 +60,7 @@
     А ещё это всё просто весело и довольно увлекательно :)</p>
 
     <hr>
-    <img class="left_image" src="assets/images/barcelona_trio.jpg">
+    <img class="left_image" src="{% static 'assets/images/barcelona_trio.jpg' %}">
     <h3>А кто это всё написал вообще?</h3>
     <div class="block">
         <p>Материалы подготовлены руководителями команд Гимназии №29 г. Минска, являющимися бывшими участниками турниров, в том числе и международных.
@@ -76,21 +69,14 @@
           <li>Шило Виталий Олегович, преподаватель ГУО "Гимназия №29 г. Минска"</li>
           <li>Суравежкин Антон Дмитриевич, студент Факультета Прикладной Математики и Информатики БГУ</li>
           <li>Кузьмицкий Владимир Павлович, студент Факультета Прикладной Математики и Информатики БГУ</li>
-        </ul>        
+        </ul>
     </div>
 
     <hr>
     <h3>А зачем это вот всё?</h3>
-    <p>Честно говоря, нам как руководителям не одной команды, показалось утомительным повторять одно и то же разным ребятам разных команд. 
+    <p>Честно говоря, нам как руководителям не одной команды, показалось утомительным повторять одно и то же разным ребятам разных команд.
     А пока кроме официальных положений почитать по теме-то и нечего. Да и официальный регламент не расскажет кучи фишек для получения баллов,
     которые мы каждый турнир ребятам заново рассказывали. Вот теперь можно почитать сие :)</p>
     <hr>
-  </div>
-<br>
-<br>
-<br>
-<br>
 
-</body>
-</html>
-  
+{% endblock %}

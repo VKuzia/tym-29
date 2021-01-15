@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="rus">
+<head>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8"/>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link rel="icon" href="{% static 'favicon.ico' %}">
+    <title>{% block head_title %}{% endblock %} · Турниры 29</title>
+</head>
+<body>
+
+ {% include 'navbar.html' %}
+    <div class='main'>
+         {% block content %}
+            {% endblock %}
+    </div>
+
+</body>
+</html>
