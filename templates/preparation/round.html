@@ -1,24 +1,12 @@
-<!DOCTYPE html>
-<html lang="rus">
-<head>
-<base href="../">
-<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8"/>
-<link rel="stylesheet" href="styles.css">
+{% extends "base.html" %}
+{% load static %}
 
-<title>Бой · Турниры 29</title>
-</head>
-<body>
+{% block head_title %}
+Бой
+{% endblock %}
 
-  <div>
-    <script src="add_nav.js" charset="utf-8"></script>
-  </div>
-
-  <div class="main">
-  	<div class="center">
-      <h1>Математический Бой</h1>
-  	</div>
-  </div>
-
-</body>
-</html>
+{% block content %}
+<div class="center">
+    <h1>Бой</h1>
+</div>
+{% endblock %}

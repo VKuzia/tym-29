@@ -7,11 +7,11 @@
                 <a>Подготовка</a>
                 <div class="dropdown-content">
                     <ul style="list-style-type:none;">
-                        <li><a href="preparation/teamleads">Руководители</a></li>
-                        <li><a href="preparation/written_materials">Оформление материалов</a></li>
-                        <li><a href="preparation/quiz">Нулевой тур</a></li>
-                        <li><a href="preparation/before_round">Перед боем</a></li>
-                        <li><a href="preparation/round">Бой</a></li>
+                        <li><a href="{% url 'teamleads' %}">Руководители</a></li>
+                        <li><a href="{% url 'written_materials' %}">Оформление материалов</a></li>
+                        <li><a href="{% url 'quiz' %}">Нулевой тур</a></li>
+                        <li><a href="{% url 'before_round' %}">Перед боем</a></li>
+                        <li><a href="{% url 'round' %}">Бой</a></li>
                     </ul>
                 </div>
             </div>
@@ -21,11 +21,11 @@
                 <a>Роли</a>
                 <div class="dropdown-content">
                     <ul style="list-style-type:none;">
-                        <li><a href="roles/reporter/reporter">Докладчик</a></li>
-                        <li><a href="roles/opponent/opponent">Оппонент</a></li>
-                        <li><a href="roles/reviewer/reviewer">Рецензент</a></li>
-                        <li><a href="roles/observer/observer">Наблюдатель</a></li>
-                        <li><a href="roles/roles">О ролях</a></li>
+                        <li><a href="{% url 'reporter' %}">Докладчик</a></li>
+                        <li><a href="{% url 'opponent' %}">Оппонент</a></li>
+                        <li><a href="{% url 'reviewer' %}">Рецензент</a></li>
+                        <li><a href="{% url 'observer' %}">Наблюдатель</a></li>
+                        <li><a href="{% url 'roles' %}">О ролях</a></li>
                     </ul>
                 </div>
             </div>
