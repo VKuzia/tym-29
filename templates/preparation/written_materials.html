@@ -1,20 +1,11 @@
-<!DOCTYPE html>
-<html lang="rus">
-<head>
-<base href="../">
-<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8"/>
-<link rel="stylesheet" href="styles.css">
+{% extends "base.html" %}
+{% load static %}
 
-<title>Письменные материалы · Турниры 29</title>
-</head>
-<body>
+{% block head_title %}
+Письменные материалы
+{% endblock %}
 
-  <div>
-    <script src="add_nav.js" charset="utf-8"></script>
-  </div>
-
-  <div class="main">
+{% block content %}
   	<div class="center">
       <h1>Письменные материалы</h1>
       <h2>"...зачем над ними запариваться?"</h2>
@@ -35,7 +26,7 @@
     </p>
     <p>
       Дело в том, что ваше решение будут читать и разбирать не только вы, но и жюри, а также другие участники турнира.
-      В этом <a href="tournaments.html" target="__blank">суть</a> турнира. В течение суток чужие команды должны будут понять, что вы там 
+      В этом <a href="{% url 'tournaments' %}" target="__blank">суть</a> турнира. В течение суток чужие команды должны будут понять, что вы там
       понаписали и как именно
       решили пункты. Естестественно фотки тетради не позволят это нормально делать, а мы обязательно настаиваем на том, чтобы 
       решение качественно (!) оформлялось в электронном виде, каким бы оно ни было.
@@ -44,18 +35,18 @@
     <br>
     <h4><i> · Работу оформляют сами участники или руководители?</i></h4>
     <p>
-      Такой вопрос когда-то последовал от одного из участников...участников...чувствуете? По определению участников работа должна быть оформлена членами собственно команды, а не руководителями. <a href="preparation/teamleads.html" target="__blank">Руководитель</a> лишь направляет и подсказывает, как лучше оформить решение. Хотя в его обязанности входят регулярный просмотр решения и выявление неточностей в материалах, руководитель не должен исправлять это дело сам, а тем более писать решение
+      Такой вопрос когда-то последовал от одного из участников...участников...чувствуете? По определению участников работа должна быть оформлена членами собственно команды, а не руководителями. <a href="{% url 'teamleads' %}" target="__blank">Руководитель</a> лишь направляет и подсказывает, как лучше оформить решение. Хотя в его обязанности входят регулярный просмотр решения и выявление неточностей в материалах, руководитель не должен исправлять это дело сам, а тем более писать решение
       участников за них.
     </p>
 
     <p>
-      Дело не только в честности, сути турнира и приличии. Дело в том, что участник должен очень хорошо разбираться в оформленном решении, что как бы логично. Иногда <a href="roles/reporter.html" target="__blank">Докладчик</a> не разбирается в решении и это приводит к большому краху во время боя. Кажется, если все материалы участник проработал сам, баллы могут быть выше 4 из 10.
+      Дело не только в честности, сути турнира и приличии. Дело в том, что участник должен очень хорошо разбираться в оформленном решении, что как бы логично. Иногда <a href="{% url 'reporter' %}" target="__blank">Докладчик</a> не разбирается в решении и это приводит к большому краху во время боя. Кажется, если все материалы участник проработал сам, баллы могут быть выше 4 из 10.
     </p>
 
     <br>
     <h4><i> · Как эти материалы используются?</i></h4>
     <p>
-      Докладчика слушают 10 минут + полчасика обсуждения в ходе <a href="preparation/round.html" target="__blank">боя</a>.
+      Докладчика слушают 10 минут + полчасика обсуждения в ходе <a href="{% url 'round' %}" target="__blank">боя</a>.
       Естественно, абсолютно доступно изложить все выкладки решения за такой срок невозможно, а вот материалы читаются в течение целых суток и далее обсуждаются на бою. Естественно, любая "непонятка" в ходе турнира играет против автора решения. Чтобы их было меньше, а баллы были выше, нужно качественно оформлять свои наработки.
     </p>
 
@@ -137,7 +128,7 @@
     <br>
     <h4><i> · Каковы правила оформления?</i></h4>
 
-    <img class="right_image" src="assets/images/preparation/title.png" style="border: 5px dashed green;">
+    <img class="right_image" src="{% static 'assets/images/preparation/title.png' %}" style="border: 5px dashed green;">
     <div class="block">
       <p>
         Для каждого турнира существуют официальные положения, в которых оговаривают условия оформления работ. Но зачастую кроме общих фраз и формата титульного листа там ничего полезного не будет.
@@ -207,12 +198,12 @@
       Пожалуйста, бахайте, только всё аккуратненько подпишите и поясните. Понятно, что каждую строчку выкладок комментировать не стоит ("я перенёс а за знак равно" будет лишним), но наиболее аккуратные моменты стоит прояснить
       ("отметаем отрицательный корень по лемме 3"). Да, эти места будут читаться не "с лёту", но так читается любая математическая литература. Там, где вы можете пояснить что-то--поясняйте. А ещё гляньте примеры, которые здесь оставлены. Какой из них вы можете прочитать? (не пробуйте вникать в суть, без условия это бесполезно)
     </p>
-    <div id="banner">
+    <div class="banner">
       <div class="inline-block"> 
-        <img class="left_image" src="assets/images/preparation/formulas_incorrect.png" style="border: 5px dashed red;">
+        <img class="left_image" src="{% static 'assets/images/preparation/formulas_incorrect.png' %}" style="border: 5px dashed red;">
       </div>
       <div class="inline-block">
-        <img class="right_image" src="assets/images/preparation/formulas_correct.png" style="border: 5px dashed green;">
+        <img class="right_image" src="{% static 'assets/images/preparation/formulas_correct.png' %}" style="border: 5px dashed green;">
       </div>
     </div>
     
@@ -314,16 +305,14 @@
       </ul>
       Вот вам пример.
     </p>
-    <div id="banner">
+    <div class="banner">
       <div class="inline-block"> 
-        <img class="left_image" src="assets/images/preparation/references_incorrect.png" style="border: 5px dashed red;">
+        <img class="left_image" src="{% static 'assets/images/preparation/references_incorrect.png' %}" style="border: 5px dashed red;">
       </div>
       <div class="inline-block">
-        <img class="right_image" src="assets/images/preparation/references_correct.png" style="border: 5px dashed green;">
+        <img class="right_image" src="{% static 'assets/images/preparation/references_correct.png' %}" style="border: 5px dashed green;">
       </div>
     </div>
-
-
 
 	<br>
     <h4>Нумерация страниц</h4>
@@ -373,7 +362,4 @@
 
 	<hr>
 	<p>Удачи на турнирах!</p>
-
-  </div>
-</body>
-</html>
+{% endblock %}

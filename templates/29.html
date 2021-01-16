@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head_title %}
+Гимназия №29
+{% endblock %}
+
+{% block content %}
+<div class="center">
+    <h1>Гимназия №29</h1>
+    <h2>является просто хорошим учебным заведением,</h2>
+    <h3>которое в своё время закончили все упомянутые на <a href="{% url 'home' %}">главной странице</a> личности :)</h3>
+    <h4>подробнее почитать о гимназии можно <a href="http://gymn29.minsk.edu.by/" target="_blank">здесь</a></h4>
+    <img src="{% static 'assets/images/gymn29.png' %}" width=50%>
+</div>
+{% endblock %}
