@@ -1,6 +1,8 @@
 from tournaments import views
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -20,4 +22,4 @@ urlpatterns = [
     path('roles/reporter', views.reporter_page, name="reporter"),
     path('roles/reviewer', views.reviewer_page, name="reviewer"),
     path('roles/roles', views.roles_page, name="roles"),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
