@@ -1,16 +1,30 @@
 import os
+from mimetypes import add_type
 from pathlib import Path
 from dotenv import load_dotenv
 
 load_dotenv()
+add_type("text/css", ".css", True)
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
-DEBUG = True
+DEBUG = False
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '0.0.0.0']
 
-ALLOWED_HOSTS = []
+LANGUAGE_CODE = 'en-us'
+TIME_ZONE = 'UTC'
+USE_I18N = True
+USE_L10N = True
+USE_TZ = True
+
+
+STATIC_ROOT = ''
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -74,26 +88,3 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
-
-LANGUAGE_CODE = 'en-us'
-
-TIME_ZONE = 'UTC'
-
-USE_I18N = True
-
-USE_L10N = True
-
-USE_TZ = True
-
-# PROJECT_FOLDER = os.path.abspath(os.path.dirname(__file__))
-# STATIC_ROOT = os.path.join(BASE_DIR, "static")
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
-# STATICFILES_DIRS = (os.path.join(BASE_DIR, "staticfiles"), )
-# STATICFILES_FINDERS = (
-#     'django.contrib.staticfiles.finders.FileSystemFinder',
-#     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-# )

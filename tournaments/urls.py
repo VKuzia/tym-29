@@ -6,8 +6,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('', views.home_page, name="home"),
-    path('tournaments/', views.tournaments_page, name="tournaments"),
-    path('29/', views.twenty_nine_page, name="29"),
+    path('tournaments', views.tournaments_page, name="tournaments"),
+    path('29', views.twenty_nine_page, name="29"),
 
     path('preparation/before_round', views.before_round_page, name="before_round"),
     path('preparation/quiz', views.quiz_page, name="quiz"),
