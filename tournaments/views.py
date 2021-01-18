@@ -75,7 +75,7 @@ def server_error_page(request):
 
 def permission_denied_page(request, exception=None):
     error_code = "403"
-    error_description = "Ошибка доступа. Удручающе."
+    error_description = "Ошибка доступа. Вас не пускают. Удручающе."
     context = {"error_code": error_code,
                "error_description": error_description}
     return render(request, "error_page.html", context)

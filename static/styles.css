@@ -113,6 +113,14 @@ animation: fader 10s;
   width: 43%;
 }
 
+.centered_image {
+  position: absolute;
+  max-width: 80%;
+  top: 10%;
+  left: 10%;
+  border-radius: 3px;
+}
+
 @keyframes fadeInFrames {
   0% {
     opacity: 0;
