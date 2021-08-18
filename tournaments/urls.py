@@ -22,4 +22,14 @@ urlpatterns = [
     path('roles/reporter', views.reporter_page, name="reporter"),
     path('roles/reviewer', views.reviewer_page, name="reviewer"),
     path('roles/roles', views.roles_page, name="roles"),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+    path('404', views.page_not_found_page, name="not_found"),
+    path('500', views.server_error_page, name="server_error"),
+    path('403', views.permission_denied_page, name="permission_denied"),
+    path('400', views.bad_request_page, name="bad_request"),
+]
+
+handler404 = "tournaments.views.page_not_found_page"
+handler500 = "tournaments.views.server_error_page"
+handler403 = "tournaments.views.permission_denied_page"
+handler400 = "tournaments.views.bad_request_page"

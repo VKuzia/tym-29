@@ -5,9 +5,7 @@ from django.conf import settings
 
 def home_page(request):
     path = "." + settings.STATIC_URL + "assets/images/slideshow/"
-    print(path)
     slideshow_images = os.listdir(path)
-    print(slideshow_images)
     return render(request, "index.html", {"slideshow_images": slideshow_images})
 
 
@@ -57,3 +55,35 @@ def reporter_page(request):
 
 def reviewer_page(request):
     return render(request, "roles/reviewer.html")
+
+
+def page_not_found_page(request, exception=None):
+    error_code = "404"
+    error_description = "Запрашиваемая страница не найдена. Грустно."
+    context = {"error_code": error_code,
+               "error_description": error_description}
+    return render(request, "error_page.html", context)
+
+
+def server_error_page(request):
+    error_code = "500"
+    error_description = "Внутренняя ошибка сервера. Печально."
+    context = {"error_code": error_code,
+               "error_description": error_description}
+    return render(request, "error_page.html", context)
+
+
+def permission_denied_page(request, exception=None):
+    error_code = "403"
+    error_description = "Ошибка доступа. Вас не пускают. Удручающе."
+    context = {"error_code": error_code,
+               "error_description": error_description}
+    return render(request, "error_page.html", context)
+
+
+def bad_request_page(request, exception=None):
+    error_code = "400"
+    error_description = "Некорректный запрос. Обидно."
+    context = {"error_code": error_code,
+               "error_description": error_description}
+    return render(request, "error_page.html", context)

@@ -1,3 +1,4 @@
 .idea
 .env
 tournaments/__pycache__/
+tournaments/static

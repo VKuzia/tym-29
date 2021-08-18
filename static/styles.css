@@ -12,7 +12,7 @@ body {
   top: var(--nav-padding-neg);
   left: var(--nav-padding-neg);
   position: fixed;
-  width: 100%;
+  width: 103%;
   z-index: 1000;
 }
 
@@ -32,6 +32,27 @@ body {
 .navbar ul li:hover {
   background-color: red;
   cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  .navbar ul li:not(:last-child) {
+    display: none;
+  }
+
+  #menuItem {
+    display: block;
+  }
+
+  #menuItem ul li {
+    display: block;
+    float: left;
+  }
+}
+
+@media screen and (min-width: 601px) {
+  .navbar ul li:last-child {
+    display: none;
+  }
 }
 
 .dropdown-content {
@@ -90,10 +111,10 @@ body {
 }
 
 .slide {
-z-index: -100;
-display: none;
-opacity: 0;
-animation: fader 10s;
+  z-index: -100;
+  display: none;
+  opacity: 0;
+  animation: fader 10s;
 }
 
 
@@ -111,6 +132,14 @@ animation: fader 10s;
   margin: 0 30px 30px;
   min-width: 400px;
   width: 43%;
+}
+
+.centered_image {
+  position: absolute;
+  max-width: 80%;
+  top: 10%;
+  left: 10%;
+  border-radius: 3px;
 }
 
 @keyframes fadeInFrames {

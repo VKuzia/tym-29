@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head_title %}{{ error_code }}{% endblock %}
+
+{% block content %}
+<div class="center">
+    <h1>Ошибка {{ error_code }}</h1>
+    <h3>{{ error_description }}</h3>
+    <br>
+    <img src="{% with 'assets/images/errors/'|add:error_code|add:'.png' as image_static %}
+    {% static image_static %}
+    {% endwith %}" style="max-width: 70vw; max-height: 50vh;">
+</div>
+{% endblock %}
