@@ -142,6 +142,27 @@ body {
   border-radius: 3px;
 }
 
+.column {
+  float: left;
+  width: 50%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.correct {
+border: 5px dashed green;
+width: 90%
+}
+
+.incorrect {
+border: 5px dashed red;
+width: 90%
+}
+
 @keyframes fadeInFrames {
   0% {
     opacity: 0;
