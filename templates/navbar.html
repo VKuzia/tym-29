@@ -31,5 +31,29 @@
             </div>
         </li>
         <li><a href="{% url '29' %}">Гимназия №29</a></li>
+        <li id="menuItem">
+            <a>Меню</a>
+            <div class="dropdown-content">
+                <ul style="list-style-type:none;">
+                    <li><a href="{% url 'home' %}">Главная</a></li>
+                    <hr>
+                    <li><a href="{% url 'tournaments' %}">Турниры</a></li>
+                    <hr>
+                    <li><a href="{% url 'teamleads' %}">Руководители</a></li>
+                    <li><a href="{% url 'written_materials' %}">Оформление материалов</a></li>
+                    <li><a href="{% url 'quiz' %}">Нулевой тур</a></li>
+                    <li><a href="{% url 'before_round' %}">Перед боем</a></li>
+                    <li><a href="{% url 'round' %}">Бой</a></li>
+                    <hr>
+                    <li><a href="{% url 'reporter' %}">Докладчик</a></li>
+                    <li><a href="{% url 'opponent' %}">Оппонент</a></li>
+                    <li><a href="{% url 'reviewer' %}">Рецензент</a></li>
+                    <li><a href="{% url 'observer' %}">Наблюдатель</a></li>
+                    <li><a href="{% url 'roles' %}">О ролях</a></li>
+                    <hr>
+                    <li><a href="{% url '29' %}">Гимназия №29</a></li>
+                </ul>
+            </div>
+        </li>
     </ul>
 </nav>
