@@ -12,7 +12,7 @@ body {
   top: var(--nav-padding-neg);
   left: var(--nav-padding-neg);
   position: fixed;
-  width: 100%;
+  width: 110%;
   z-index: 1000;
 }
 
