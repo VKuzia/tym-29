@@ -12,7 +12,7 @@ body {
   top: var(--nav-padding-neg);
   left: var(--nav-padding-neg);
   position: fixed;
-  width: 100%;
+  width: 110%;
   z-index: 1000;
 }
 
@@ -111,6 +111,14 @@ animation: fader 10s;
   margin: 0 30px 30px;
   min-width: 400px;
   width: 43%;
+}
+
+.centered_image {
+  position: absolute;
+  max-width: 80%;
+  top: 10%;
+  left: 10%;
+  border-radius: 3px;
 }
 
 @keyframes fadeInFrames {
